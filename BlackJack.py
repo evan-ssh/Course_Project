@@ -2,15 +2,13 @@
 import random
 def main():
    deck = init_deck()
-   hand = [[], []] # one is player, two is dealer
+   hand = [[], []] # one is player two is dealer
    
    for start_deal in range(2):
       hand[0].append(deal_a_card(deck))
       hand[1].append(deal_a_card(deck))
-    
-   print(f"Players Hand:", hand[0])
-   print(f"Dealers Hand:", hand[1][0])
-
+      return hand
+      
 def deal_a_card(deck):
    random_card = random.choice(deck)
    deck.remove(random_card)
@@ -32,7 +30,6 @@ def init_deck():
             deck.append(cards)
     return deck
    
-
 
 
 
